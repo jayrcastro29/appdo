@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>User Details</h1>
-               <table>
+              <table>
                     <thead>
                        <tr>
                           <th>Name</th>
@@ -12,8 +12,9 @@
                         </tr>
                       </thead>
 
-<% @user_details.each do |user_detail| %>
-         <% if user_signed_in? %>
+        <% @user_details.each do |user_detail| %>
+               <% if user_signed_in? %>
+                
                       <tbody>
                           <tr>
                             <td><%= user_detail.name %></td>
@@ -25,6 +26,8 @@
                             <td><%= link_to 'Destroy', user_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                           </tr>
                        </tbody>    
-                </table>
-            <% end %>
- <% end %>
+                       </table>
+                <% end %>     
+          <% end %>
+  
+ 

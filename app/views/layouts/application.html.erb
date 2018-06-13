@@ -13,6 +13,24 @@
      <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
 
-    <%= yield %>
+       <%# @user_details.each do |user_detail| %>
+         <%# if user_signed_in? %>
+              <%#= "Hello #{user_details.name}"%>                       
+            <%# end %>
+
+        <%# end %>
+          <%if user_signed_in? %>
+              <%= link_to 'Log-out', destroy_user_session_path, method: :delete%> <br>
+          <% end %>
+
+          <%if !user_signed_in? %>
+              <%= link_to 'Log-in', new_user_session_path %><br>
+          <% end %>
+             
+                <%= link_to 'Home', root_path %>
+                <%= link_to 'View Current Users', user_details_path %> 
+                <%= link_to 'Add User', new_user_detail_path %>
+
+      <%= yield %>
   </body>
 </html>
